@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<c3p0-config>
+    <default-config>
+        <property name="driverClass">com.mysql.cj.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/userdata?characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai&amp;useSSL=false</property>
+        <property name="user">root</property>
+        <property name="password">root</property>
+
+        <!-- 当连接池用完时,客户端调用getConnection()后等待获取新连接的时间，超时后将抛出SQLException -->
+        <property name="checkoutTimeout">30000</property>
+
+        <!--隔多少秒检查所有连接的空闲时间-->
+        <property name="idleConnectionTestPeriod">30</property>
+
+        <!-- 初始化数据库连接池时连接的数量,，介于maxPoolSize和minPoolSize之间-->
+        <property name="initialPoolSize">10</property>
+
+        <!--连接的最大空闲时间，如果超过这个时间，某个数据库连接还没有被使用，则会断开-->
+        <property name="maxIdleTime">30</property>
+
+        <!-- 数据库连接池中的最大的数据库连接数 -->
+        <property name="maxPoolSize">100</property>
+
+        <!-- 数据库连接池中的最小的数据库连接数 -->
+        <property name="minPoolSize">10</property>
+
+        <!-- 用以控制数据源内加载的PreparedStatements数量 -->
+        <property name="maxStatements">200</property>
+    </default-config>
+</c3p0-config>
